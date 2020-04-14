@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.loteria.model.SorteioEntity;
 import br.com.loteria.service.SorteioService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/v1/sorteio")
+@Api(value = "CRUD para Sorteio")
 public class SorteioResource {
 
 	private SorteioService sorteioService;
@@ -22,6 +25,7 @@ public class SorteioResource {
 	}
 
 	@GetMapping
+	@ApiOperation(value = "Retorna todos os sorteios")
 	public Iterable<SorteioEntity> getAll(){
 		
 		return sorteioService.findAll();
@@ -29,6 +33,7 @@ public class SorteioResource {
 	}
 	
 	@PutMapping
+	@ApiOperation(value = "Insere sorteio")
 	public ResponseEntity inserir(){
 		return null;
 	}
