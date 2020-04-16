@@ -1,4 +1,4 @@
-package br.com.loteria.model;
+package br.com.loteria.sorteio.model;
 
 import java.util.Date;
 
